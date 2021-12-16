@@ -6,7 +6,7 @@ public class Basket {
     private String items = "";
     private int totalPrice = 0;
     private int limit;
-    private double totalWeight = 0; // grams
+    private double totalWeight = 0; // g
 
     public Basket() {
         increaseCount(1);
