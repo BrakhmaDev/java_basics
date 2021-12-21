@@ -9,26 +9,21 @@ public class Main {
     }
 
     public static String searchAndReplaceDiamonds(String text, String placeholder) {
-        int count = -1;
         int flag = 1;
         if (text.contains("<") && text.contains(">")) {
-            String stringBuilder = "";
+            StringBuilder builder = new StringBuilder();
             for (int i = 0; i < text.length(); i++) {
-                count++;
                 if (text.charAt(i) == '<') {
-                    stringBuilder += placeholder;
-                    count = 0;
+                    builder.append(placeholder);
                     flag = 0;
                 } else if (text.charAt(i) == '>') {
-                    count = 0;
                     flag = 1;
                 } else if (flag == 1) {
-                    count = 0;
-                    stringBuilder += String.valueOf(text.charAt(i));
+                    builder.append(text.charAt(i));
                 }
 
             }
-            return stringBuilder;
+            return builder.toString();
         } else {
             return text;
         }
