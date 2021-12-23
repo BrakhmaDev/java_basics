@@ -10,7 +10,6 @@ public class Main {
     int value2 = Integer.parseInt(text.substring(firstHyphen + 2, 39));
     int value3 = Integer.parseInt(text.substring(mAlph + 7, 61));
     System.out.println(value1 + value2 + value3);
-    //TODO: напишите ваш код, результат вывести в консоль
   }
 
 }

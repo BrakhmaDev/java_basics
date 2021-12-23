@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
 
   public static void main(String[] args) {
@@ -10,9 +9,20 @@ public class Main {
       if (input.equals("0")) {
         break;
       }
-      //TODO:напишите ваш код тут, результат вывести в консоль.
-      //При невалидном ФИО вывести в консоль: Введенная строка не является ФИО
+      if (sentenceValidator(input) == false) {
+        String[] splittedInput = input.split("\\s");
+        System.out.printf("Фамилия: %s\nИмя: %s\nОтчество: %s", splittedInput[0] , splittedInput[1], splittedInput[2]);
+      } else {
+       System.out.println("Введенная строка не является ФИО");
+      }
     }
   }
 
+  public static boolean sentenceValidator(String sentence) {
+    boolean hasNotNumbers = sentence.matches("^\\D+\\s\\D+\\s\\D+$");
+    if (hasNotNumbers == true) {
+      return false;
+    }
+    return true;
+  }
 }
